@@ -14,9 +14,11 @@ namespace GraphsMinti
     public partial class GraphForm : Form {
         private Graph graph;
         private int verticesCount;
+        private Graph.MintiNode[] mintiRez;
         public GraphForm(int vertices)
         {
             InitializeComponent();
+            verticesCount = vertices;
             for (int i = 0; i < vertices; i++) {
                 comboBoxSource.Items.Add(i);
                 comboBoxDest.Items.Add(i);
@@ -30,7 +32,44 @@ namespace GraphsMinti
             }
             comboBoxSource.SelectedIndex = 0;
             comboBoxDest.SelectedIndex = 0;
-            verticesCount = vertices;
+            
+        }
+        public GraphForm(Graph _graph)
+        {
+            InitializeComponent();
+            verticesCount = _graph.VertexCount;
+            graph = _graph;
+            for (int i = 0; i < verticesCount; i++)
+            {
+                comboBoxSource.Items.Add(i);
+                comboBoxDest.Items.Add(i);
+                dataGridViewPaths.Columns.Add(i.ToString(), i.ToString());
+                dataGridViewPaths.Columns[i].Width = 30;
+                dataGridViewPaths.Rows.Add();
+                dataGridViewPaths.Rows[i].HeaderCell.Value = i.ToString();
+                dataGridViewPaths.Rows[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dataGridViewPaths[i, i].ReadOnly = true;
+                dataGridViewPaths[i, i].Value = 0;
+            }
+            comboBoxSource.SelectedIndex = 0;
+            comboBoxDest.SelectedIndex = 0;
+
+
+            for (int i = 0; i < dataGridViewPaths.RowCount; i++)
+            {
+                for (int j = 0; j < dataGridViewPaths.ColumnCount; j++)
+                {
+                    try {
+                        if (graph[i, j] != -1)
+                            dataGridViewPaths[j, i].Value = graph[i, j, Graph.IndexatorOption.Cost];
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show("Unable to read Graph");
+                        throw e;
+                    }
+                }
+            }
         }
 
         private void GraphForm_Load(object sender, EventArgs e)
@@ -45,11 +84,11 @@ namespace GraphsMinti
                 ReadGraphFromDataGrid();
                 int startIdx = Int32.Parse(comboBoxSource.SelectedItem.ToString());
                 int endIdx = Int32.Parse(comboBoxDest.SelectedItem.ToString());
-                Graph.MintiNode[] mintiRez = graph.DoMinti(startIdx);
+                mintiRez = graph.DoMinti(startIdx);
 
                 string filename = "graph.txt";
                 string filepath = "C:\\Users\\Smith\\Downloads\\testRusnak";
-                System.IO.File.WriteAllText(Path.Combine(filepath, filename), graph.ToDotGraph(startIdx, endIdx, mintiRez));
+                System.IO.File.WriteAllText(Path.Combine(filepath, filename), graph.ToDotGraph(startIdx, endIdx, mintiRez, checkBoxShowSingles.Checked));
                 GenerateGraph(filename, filepath);
                 System.Diagnostics.Process.Start(Path.Combine(filepath, filename.Replace(".txt", ".jpeg")));
 
@@ -100,9 +139,38 @@ namespace GraphsMinti
             }
         }
 
-        private void buttonShowMap_Click(object sender, EventArgs e)
-        {
+        private void buttonShowMap_Click(object sender, EventArgs e) {
+            if (mintiRez == null) {
+                MessageBox.Show("Nothing to show");
+                return;
+            }
+            try
+            {
+            
+                int startIdx = Int32.Parse(comboBoxSource.SelectedItem.ToString());
+                int endIdx = Int32.Parse(comboBoxDest.SelectedItem.ToString());
 
+                string filename = "graph.txt";
+                string filepath = "C:\\Users\\Smith\\Downloads\\testRusnak";
+                System.IO.File.WriteAllText(Path.Combine(filepath, filename), graph.ToDotGraph(startIdx, endIdx, mintiRez, checkBoxShowSingles.Checked));
+                GenerateGraph(filename, filepath);
+                System.Diagnostics.Process.Start(Path.Combine(filepath, filename.Replace(".txt", ".jpeg")));
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Unable to show");
+                throw;
+            }
         }
+
+        private void saveGraphToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (graph == null) { MessageBox.Show("Nothing to save"); return;}
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK) {
+                graph.save(saveFileDialog1.FileName);
+            }
+        }
+
+     
     }
 }

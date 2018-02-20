@@ -30,5 +30,14 @@ namespace GraphsMinti
             GraphForm gf = new GraphForm(v);
             gf.Show(this);
         }
+
+        private void buttonOpen_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                GraphForm gf = new GraphForm(Graph.load(openFileDialog1.FileName));
+                gf.Show(this);
+            }
+        }
     }
 }

@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GraphsMinti
 {
-    class Graph {
+    [Serializable]
+    public class Graph {
         public enum IndexatorOption {
             Cost, HasWay
         }
         private int vertexCount;
+
+        public int VertexCount => vertexCount;
+
         /// <summary>
         /// if pathCounts == -1 - no way
         /// else this is way cost
@@ -102,7 +108,7 @@ namespace GraphsMinti
             return rez;
         }
 
-        public string ToDotGraph(int startIdx, int destIdx, MintiNode[] mintiRez)
+        public string ToDotGraph(int startIdx, int destIdx, MintiNode[] mintiRez, bool showSingle)
         {
             StringBuilder b = new StringBuilder();
             b.Append("digraph G {" + Environment.NewLine +
@@ -111,19 +117,21 @@ namespace GraphsMinti
                 "node[shape = doublecircle color = blue]; \"" + startIdx + " d=0\";" + Environment.NewLine +
                      "node[shape = doublecircle color = red]; \"" + destIdx + " d=" + mintiRez[destIdx]?.distance + "\";" + Environment.NewLine +
                 "node[shape = circle color = black];" + Environment.NewLine);
-            b.Append(ToDot(startIdx,destIdx,mintiRez));
+            b.Append(ToDot(startIdx,destIdx,mintiRez,showSingle));
             b.Append("}");
             return b.ToString();
         }
 
-        private string ToDot(int startIdx, int DestIdx, MintiNode[] mintiRez)
+        private string ToDot(int startIdx, int DestIdx, MintiNode[] mintiRez, bool showSingle)
         {
             bool[,] mainRoadWayTable  = new bool[vertexCount,vertexCount];
+            bool hasMainRoad = false;
             int tmp = DestIdx;
             while (tmp != startIdx) {
-                if (mintiRez[tmp] == null) break;
+                if (mintiRez[tmp] == null || tmp == -1) break;
                 mainRoadWayTable[mintiRez[tmp].prevVertexIdxs, tmp] = true;
                 tmp = mintiRez[tmp].prevVertexIdxs;
+                hasMainRoad = true;
             }
             
             StringBuilder b = new StringBuilder();
@@ -143,7 +151,7 @@ namespace GraphsMinti
                     b.AppendLine();
                     }
                 }
-                if (!hasOutLink) {
+                if (!hasOutLink && showSingle) {
                     int k = 0;
                     for (; k < vertexCount; k++) {
                         if (pathCosts[k,i] > 0) break;
@@ -151,10 +159,29 @@ namespace GraphsMinti
                     if (k == vertexCount && i != 0) {
                         b.AppendFormat("node[shape = circle color = black] \"{0} d=\";", i);
                     b.AppendLine();}
-                    
                 }
             }
+            b.AppendFormat("overlap = false" + Environment.NewLine +
+                (hasMainRoad == true ? "label = \"Distance to destination is " + mintiRez[DestIdx].distance + "\"": startIdx == DestIdx ? "label = \"Distance to destination is 0\"" : "label = \"Destination is unreachable\"") + Environment.NewLine +
+                "fontsize = 12;" + Environment.NewLine);
             return b.ToString();
         }
+
+        public void save(string filename)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream fs = new FileStream(filename, FileMode.OpenOrCreate)) { formatter.Serialize(fs, this); }
+        }
+        public static Graph load(string filename)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            Graph newobj;
+            using (FileStream fs = new FileStream(filename, FileMode.OpenOrCreate))
+            {
+                newobj = (Graph)formatter.Deserialize(fs);
+            }
+            return newobj;
+        }
+
     }
 }
