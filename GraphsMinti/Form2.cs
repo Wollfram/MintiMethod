@@ -13,6 +13,7 @@ namespace GraphsMinti
 {
     public partial class GraphForm : Form {
         private Graph graph;
+        private int verticesCount;
         public GraphForm(int vertices)
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace GraphsMinti
             }
             comboBoxSource.SelectedIndex = 0;
             comboBoxDest.SelectedIndex = 0;
-            graph = new Graph(vertices);
+            verticesCount = vertices;
         }
 
         private void GraphForm_Load(object sender, EventArgs e)
@@ -50,15 +51,17 @@ namespace GraphsMinti
                 string filepath = "C:\\Users\\Smith\\Downloads\\testRusnak";
                 System.IO.File.WriteAllText(Path.Combine(filepath, filename), graph.ToDotGraph(startIdx, endIdx, mintiRez));
                 GenerateGraph(filename, filepath);
-                System.Diagnostics.Process.Start(Path.Combine(filepath, filename.Replace(".txt", ".jpg")));
+                System.Diagnostics.Process.Start(Path.Combine(filepath, filename.Replace(".txt", ".jpeg")));
 
             }
             catch (Exception exception) {
                 MessageBox.Show("Unable to calculate");
+                throw;
             }
         }
 
         private void ReadGraphFromDataGrid() {
+            graph = new Graph(verticesCount);
             for (int i = 0; i < dataGridViewPaths.RowCount; i++) {
                 for (int j = 0; j < dataGridViewPaths.ColumnCount; j++) {
                     try {
@@ -78,7 +81,7 @@ namespace GraphsMinti
         {
             try
             {
-                var command = string.Format("C:\\Users\\Smith\\Downloads\\testRusnak\\graphviz-2.38\\release\\bin\\dot -Tjpg {0} -o {1}", Path.Combine(path, fileName), Path.Combine(path, fileName.Replace(".txt", ".jpg")));
+                var command = string.Format("C:\\Users\\Smith\\Downloads\\testRusnak\\graphviz-2.38\\release\\bin\\dot -Tjpeg {0} -o {1}", Path.Combine(path, fileName), Path.Combine(path, fileName.Replace(".txt", ".jpeg")));
 
                 var procStartInfo = new System.Diagnostics.ProcessStartInfo("cmd", "/C " + command);
 

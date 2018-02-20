@@ -80,8 +80,10 @@ namespace GraphsMinti
                         }
                     }
                 }
-                rez[candidat] = new MintiNode(minDist,prevMinNode);
-                vertexInProcessI.Add(candidat,minDist);
+                if (candidat != -1) {
+                    rez[candidat] = new MintiNode(minDist, prevMinNode);
+                    vertexInProcessI.Add(candidat, minDist);
+                }
 
                 List<int> toRemove = new List<int>();
                 foreach (var di in vertexInProcessI) {
@@ -103,11 +105,11 @@ namespace GraphsMinti
         public string ToDotGraph(int startIdx, int destIdx, MintiNode[] mintiRez)
         {
             StringBuilder b = new StringBuilder();
-            b.Append("digraph G {" + Environment.NewLine + 
+            b.Append("digraph G {" + Environment.NewLine +
                 "rankdir = LR;" + Environment.NewLine + 
-                "size = \"8,5\"" + Environment.NewLine + 
-                "node[shape = doublecircle color = blue]; v" +startIdx + "_0;" + Environment.NewLine +
-                     "node[shape = doublecircle color = red]; v" + destIdx + "_" + mintiRez[destIdx].distance + ";" + Environment.NewLine +
+                "size = \"8,5\"" + Environment.NewLine +
+                "node[shape = doublecircle color = blue]; \"" + startIdx + " d=0\";" + Environment.NewLine +
+                     "node[shape = doublecircle color = red]; \"" + destIdx + " d=" + mintiRez[destIdx]?.distance + "\";" + Environment.NewLine +
                 "node[shape = circle color = black];" + Environment.NewLine);
             b.Append(ToDot(startIdx,destIdx,mintiRez));
             b.Append("}");
@@ -116,14 +118,40 @@ namespace GraphsMinti
 
         private string ToDot(int startIdx, int DestIdx, MintiNode[] mintiRez)
         {
+            bool[,] mainRoadWayTable  = new bool[vertexCount,vertexCount];
+            int tmp = DestIdx;
+            while (tmp != startIdx) {
+                if (mintiRez[tmp] == null) break;
+                mainRoadWayTable[mintiRez[tmp].prevVertexIdxs, tmp] = true;
+                tmp = mintiRez[tmp].prevVertexIdxs;
+            }
+            
             StringBuilder b = new StringBuilder();
             for (int i = 0; i < vertexCount; i++) {
+                bool hasOutLink = false;
                 for (int j = 0; j < vertexCount; j++) {
+                   
                     if (pathCosts[i, j] > 0) {
-                        b.AppendFormat(
-                            "v{0}_{1} -> v{2}_{3} [label = \"{4}\"]",i, mintiRez[i].distance, j, mintiRez[j].distance, pathCosts[i, j]);
-                        b.AppendLine();
+                        hasOutLink = true;
+                        string idist = mintiRez[i] == null ? "" : mintiRez[i].distance.ToString();
+                        string jdist = mintiRez[j] == null ? "" : mintiRez[j].distance.ToString();
+
+                        b.AppendFormat("\"{0} d={1}\" -> \"{2} d={3}\" [label = \"{4}\"", i, idist, j,
+                            jdist, pathCosts[i, j]);
+                        if (mainRoadWayTable[i, j]) b.Append(" color = red]");
+                        else b.Append("]");
+                    b.AppendLine();
                     }
+                }
+                if (!hasOutLink) {
+                    int k = 0;
+                    for (; k < vertexCount; k++) {
+                        if (pathCosts[k,i] > 0) break;
+                    }
+                    if (k == vertexCount && i != 0) {
+                        b.AppendFormat("node[shape = circle color = black] \"{0} d=\";", i);
+                    b.AppendLine();}
+                    
                 }
             }
             return b.ToString();
