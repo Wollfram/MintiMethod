@@ -134,18 +134,10 @@ namespace GraphsMinti
 
                         if (pathCosts[i, j] > 0) {
                             hasOutLink = true;
-                       //     string idist = mintiRez[i] == null ? "" : mintiRez[i].distance.ToString();
-                       //     string jdist = mintiRez[j] == null ? "" : mintiRez[j].distance.ToString();
 
                             b.Append($"\"{i+1}\" -> \"{j+1}\" [label = \"{pathCosts[i, j]}\"");
                             if (mintiRez[j] != null &&(mintiRez[j].prevVertexIdxs == i)) b.Append(" color = red fontcolor = red]");
                             else b.Append("]");
-
-                            //  b.AppendFormat("\"{0} d={1}\" -> \"{2} d={3}\" [label = \"{4}\"", i, idist, j, jdist,
-                            //     pathCosts[i, j]);
-                            //if (mainRoadWayTable[i, j]) b.Append(" color = red]");
-                            //else b.Append("]");
-
                             b.AppendLine();
                         }
                     }
@@ -164,7 +156,6 @@ namespace GraphsMinti
             else
             {// show one way
                 bool[,] mainRoadWayTable = new bool[vertexCount, vertexCount];
-             //   bool hasMainRoad = false;
                 int tmp = DestIdx;
                 if (mintiRez[tmp] != null && tmp != -1)
                 {
@@ -173,7 +164,6 @@ namespace GraphsMinti
                         mainRoadWayTable[mintiRez[tmp].prevVertexIdxs, tmp] = true;
                         tmp = mintiRez[tmp].prevVertexIdxs;
                     }
-          //          hasMainRoad = true;
                 }
                 for (int i = 0; i < vertexCount; i++)
                 {
@@ -184,17 +174,12 @@ namespace GraphsMinti
                         if (pathCosts[i, j] > 0)
                         {
                             hasOutLink = true;
-                            //    string idist = mintiRez[i] == null ? "" : mintiRez[i].distance.ToString();
-                            //     string jdist = mintiRez[j] == null ? "" : mintiRez[j].distance.ToString();
+
 
                             b.Append($"\"{i + 1}\" -> \"{j + 1}\" [label = \"{pathCosts[i, j]}\"");
                             if (mainRoadWayTable[i, j]) b.Append(" color = red fontcolor = red]");
                             else b.Append("]");
 
-                            //b.AppendFormat("\"{0} d={1}\" -> \"{2} d={3}\" [label = \"{4}\"", i, idist, j, jdist,
-                            //    pathCosts[i, j]);
-                            //if (mainRoadWayTable[i, j]) b.Append(" color = red]");
-                            //else b.Append("]");
                             b.AppendLine();
                         }
                     }
@@ -207,7 +192,7 @@ namespace GraphsMinti
                         }
                         if (k == vertexCount && i != 0)
                         {
-                            b.Append($"node[shape = circle color = black] \"{ i+1} \";");
+                            b.Append($"node[shape = circle color = black] \"{ i+1}\";");
                             b.AppendLine();
                         }
                     }
