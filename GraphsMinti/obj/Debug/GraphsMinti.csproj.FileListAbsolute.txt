@@ -1,10 +1,10 @@
 D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Debug\GraphsMinti.exe.config
 D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Debug\GraphsMinti.exe
 D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Debug\GraphsMinti.pdb
-D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\obj\Debug\GraphsMinti.csprojResolveAssemblyReference.cache
 D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\obj\Debug\GraphsMinti.MainForm.resources
 D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\obj\Debug\GraphsMinti.GraphForm.resources
 D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\obj\Debug\GraphsMinti.Properties.Resources.resources
 D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\obj\Debug\GraphsMinti.csproj.GenerateResource.Cache
 D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\obj\Debug\GraphsMinti.exe
 D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\obj\Debug\GraphsMinti.pdb
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\obj\Debug\GraphsMinti.csprojResolveAssemblyReference.cache

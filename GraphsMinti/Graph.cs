@@ -111,59 +111,118 @@ namespace GraphsMinti
         public string ToDotGraph(int startIdx, int destIdx, MintiNode[] mintiRez, bool showSingle)
         {
             StringBuilder b = new StringBuilder();
-            b.Append("digraph G {" + Environment.NewLine +
-                "rankdir = LR;" + Environment.NewLine + 
-                "size = \"8,5\"" + Environment.NewLine +
-                "node[shape = doublecircle color = blue]; \"" + startIdx + " d=0\";" + Environment.NewLine +
-                     "node[shape = doublecircle color = red]; \"" + destIdx + " d=" + mintiRez[destIdx]?.distance + "\";" + Environment.NewLine +
-                "node[shape = circle color = black];" + Environment.NewLine);
+            b.Append("digraph G {" + Environment.NewLine + "rankdir = LR;" + Environment.NewLine + "size = \""+(vertexCount > 10 ? vertexCount: 10).ToString() +"\"" +
+                     Environment.NewLine + "node[shape = doublecircle color = blue]; \"" + (startIdx+1) + "\";" +
+                     Environment.NewLine);
+            if (destIdx != -1)
+                b.Append("node[shape = doublecircle color = red]; \"" + (destIdx+1) + "\";" + Environment.NewLine);
+            b.Append("node[shape = circle color = black];" + Environment.NewLine);
             b.Append(ToDot(startIdx,destIdx,mintiRez,showSingle));
             b.Append("}");
             return b.ToString();
         }
 
-        private string ToDot(int startIdx, int DestIdx, MintiNode[] mintiRez, bool showSingle)
+        private string ToDot(int startIdx, int DestIdx, MintiNode[] mintiRez, bool showSingle) //todo destidx == -1
         {
-            bool[,] mainRoadWayTable  = new bool[vertexCount,vertexCount];
-            bool hasMainRoad = false;
-            int tmp = DestIdx;
-            while (tmp != startIdx) {
-                if (mintiRez[tmp] == null || tmp == -1) break;
-                mainRoadWayTable[mintiRez[tmp].prevVertexIdxs, tmp] = true;
-                tmp = mintiRez[tmp].prevVertexIdxs;
-                hasMainRoad = true;
-            }
-            
-            StringBuilder b = new StringBuilder();
-            for (int i = 0; i < vertexCount; i++) {
-                bool hasOutLink = false;
-                for (int j = 0; j < vertexCount; j++) {
-                   
-                    if (pathCosts[i, j] > 0) {
-                        hasOutLink = true;
-                        string idist = mintiRez[i] == null ? "" : mintiRez[i].distance.ToString();
-                        string jdist = mintiRez[j] == null ? "" : mintiRez[j].distance.ToString();
+            bool ShowAll = (DestIdx == -1);
 
-                        b.AppendFormat("\"{0} d={1}\" -> \"{2} d={3}\" [label = \"{4}\"", i, idist, j,
-                            jdist, pathCosts[i, j]);
-                        if (mainRoadWayTable[i, j]) b.Append(" color = red]");
-                        else b.Append("]");
-                    b.AppendLine();
+            StringBuilder b = new StringBuilder();
+            if (ShowAll) { //show all short ways
+                for (int i = 0; i < vertexCount; i++) {
+                    bool hasOutLink = false;
+                    for (int j = 0; j < vertexCount; j++) {
+
+                        if (pathCosts[i, j] > 0) {
+                            hasOutLink = true;
+                       //     string idist = mintiRez[i] == null ? "" : mintiRez[i].distance.ToString();
+                       //     string jdist = mintiRez[j] == null ? "" : mintiRez[j].distance.ToString();
+
+                            b.Append($"\"{i+1}\" -> \"{j+1}\" [label = \"{pathCosts[i, j]}\"");
+                            if (mintiRez[j] != null &&(mintiRez[j].prevVertexIdxs == i)) b.Append(" color = red fontcolor = red]");
+                            else b.Append("]");
+
+                            //  b.AppendFormat("\"{0} d={1}\" -> \"{2} d={3}\" [label = \"{4}\"", i, idist, j, jdist,
+                            //     pathCosts[i, j]);
+                            //if (mainRoadWayTable[i, j]) b.Append(" color = red]");
+                            //else b.Append("]");
+
+                            b.AppendLine();
+                        }
                     }
-                }
-                if (!hasOutLink && showSingle) {
-                    int k = 0;
-                    for (; k < vertexCount; k++) {
-                        if (pathCosts[k,i] > 0) break;
+                    if (!hasOutLink && showSingle) {
+                        int k = 0;
+                        for (; k < vertexCount; k++) {
+                            if (pathCosts[k, i] > 0) break;
+                        }
+                        if (k == vertexCount && i != 0) {
+                            b.Append($"node[shape = circle color = black] \"{i + 1}\";");
+                            b.AppendLine();
+                        }
                     }
-                    if (k == vertexCount && i != 0) {
-                        b.AppendFormat("node[shape = circle color = black] \"{0} d=\";", i);
-                    b.AppendLine();}
                 }
             }
-            b.AppendFormat("overlap = false" + Environment.NewLine +
-                (hasMainRoad == true ? "label = \"Distance to destination is " + mintiRez[DestIdx].distance + "\"": startIdx == DestIdx ? "label = \"Distance to destination is 0\"" : "label = \"Destination is unreachable\"") + Environment.NewLine +
-                "fontsize = 12;" + Environment.NewLine);
+            else
+            {// show one way
+                bool[,] mainRoadWayTable = new bool[vertexCount, vertexCount];
+             //   bool hasMainRoad = false;
+                int tmp = DestIdx;
+                if (mintiRez[tmp] != null && tmp != -1)
+                {
+                    while (tmp != startIdx)
+                    {
+                        mainRoadWayTable[mintiRez[tmp].prevVertexIdxs, tmp] = true;
+                        tmp = mintiRez[tmp].prevVertexIdxs;
+                    }
+          //          hasMainRoad = true;
+                }
+                for (int i = 0; i < vertexCount; i++)
+                {
+                    bool hasOutLink = false;
+                    for (int j = 0; j < vertexCount; j++)
+                    {
+
+                        if (pathCosts[i, j] > 0)
+                        {
+                            hasOutLink = true;
+                            //    string idist = mintiRez[i] == null ? "" : mintiRez[i].distance.ToString();
+                            //     string jdist = mintiRez[j] == null ? "" : mintiRez[j].distance.ToString();
+
+                            b.Append($"\"{i + 1}\" -> \"{j + 1}\" [label = \"{pathCosts[i, j]}\"");
+                            if (mainRoadWayTable[i, j]) b.Append(" color = red fontcolor = red]");
+                            else b.Append("]");
+
+                            //b.AppendFormat("\"{0} d={1}\" -> \"{2} d={3}\" [label = \"{4}\"", i, idist, j, jdist,
+                            //    pathCosts[i, j]);
+                            //if (mainRoadWayTable[i, j]) b.Append(" color = red]");
+                            //else b.Append("]");
+                            b.AppendLine();
+                        }
+                    }
+                    if (!hasOutLink && showSingle)
+                    {
+                        int k = 0;
+                        for (; k < vertexCount; k++)
+                        {
+                            if (pathCosts[k, i] > 0) break;
+                        }
+                        if (k == vertexCount && i != 0)
+                        {
+                            b.Append($"node[shape = circle color = black] \"{ i+1} \";");
+                            b.AppendLine();
+                        }
+                    }
+                }
+
+            }
+            b.AppendFormat("overlap = false" + Environment.NewLine);
+            if (DestIdx != -1) {
+                if (mintiRez[DestIdx] != null)
+                    b.Append("label = \"Відстань до стоку " + mintiRez[DestIdx].distance + "\"");
+            }
+            else {
+                b.Append((startIdx == DestIdx || DestIdx == -1 ? "label = \"Показано всі шляхи\"" : "label = \"Стік недосяжний\"") + Environment.NewLine +
+                    "fontsize = 12;" + Environment.NewLine);
+            }
             return b.ToString();
         }
 

@@ -24,7 +24,7 @@ namespace GraphsMinti
                 if (v < 1) throw  new Exception();
             }
             catch (Exception exception) {
-                MessageBox.Show("Wrong number of vertices", "Error");
+                MessageBox.Show("Невірно введена кількість. Доступне додатнє число <=655", "Error");
                 return;
             }
             GraphForm gf = new GraphForm(v);
@@ -33,11 +33,20 @@ namespace GraphsMinti
 
         private void buttonOpen_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                GraphForm gf = new GraphForm(Graph.load(openFileDialog1.FileName));
-                gf.Show(this);
+            try {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    GraphForm gf = new GraphForm(Graph.load(openFileDialog1.FileName));
+                    gf.Show(this);
+                }
             }
+            catch (Exception exception) {
+                MessageBox.Show("Неможливо відкрити файл");
+#if DEBUG
+                throw;
+#endif
+            }
+
         }
     }
 }

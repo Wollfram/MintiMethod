@@ -20,8 +20,8 @@ namespace GraphsMinti
             InitializeComponent();
             verticesCount = vertices;
             for (int i = 0; i < vertices; i++) {
-                comboBoxSource.Items.Add(i);
-                comboBoxDest.Items.Add(i);
+                comboBoxSource.Items.Add(i+1);
+                comboBoxDest.Items.Add(i+1);
                 dataGridViewPaths.Columns.Add(i.ToString(), (i+1).ToString());
                 dataGridViewPaths.Columns[i].Width = 30;
                 dataGridViewPaths.Rows.Add();
@@ -30,44 +30,35 @@ namespace GraphsMinti
                 dataGridViewPaths[i, i].ReadOnly = true;
                 dataGridViewPaths[i, i].Value = 0;
             }
+            comboBoxDest.Items.Add("Усі шляхи");
             comboBoxSource.SelectedIndex = 0;
-            comboBoxDest.SelectedIndex = 0;
+            comboBoxDest.SelectedIndex = comboBoxDest.Items.Count-1;
             
         }
-        public GraphForm(Graph _graph)
-        {
+
+        public GraphForm(Graph _graph) {
             InitializeComponent();
             verticesCount = _graph.VertexCount;
             graph = _graph;
-            for (int i = 0; i < verticesCount; i++)
-            {
-                comboBoxSource.Items.Add(i);
-                comboBoxDest.Items.Add(i);
-                dataGridViewPaths.Columns.Add(i.ToString(), (i+1).ToString());
+            for (int i = 0; i < verticesCount; i++) {
+                comboBoxSource.Items.Add(i + 1);
+                comboBoxDest.Items.Add(i + 1);
+                dataGridViewPaths.Columns.Add(i.ToString(), (i + 1).ToString());
                 dataGridViewPaths.Columns[i].Width = 30;
                 dataGridViewPaths.Rows.Add();
-                dataGridViewPaths.Rows[i].HeaderCell.Value = (i+1).ToString();
+                dataGridViewPaths.Rows[i].HeaderCell.Value = (i + 1).ToString();
                 dataGridViewPaths.Rows[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 dataGridViewPaths[i, i].ReadOnly = true;
                 dataGridViewPaths[i, i].Value = 0;
             }
+            comboBoxDest.Items.Add("All");
             comboBoxSource.SelectedIndex = 0;
-            comboBoxDest.SelectedIndex = 0;
+            comboBoxDest.SelectedIndex = comboBoxDest.Items.Count - 1;
 
-
-            for (int i = 0; i < dataGridViewPaths.RowCount; i++)
-            {
-                for (int j = 0; j < dataGridViewPaths.ColumnCount; j++)
-                {
-                    try {
-                        if (graph[i, j] != -1)
-                            dataGridViewPaths[j, i].Value = graph[i, j, Graph.IndexatorOption.Cost];
-                    }
-                    catch (Exception e)
-                    {
-                        MessageBox.Show("Unable to read Graph");
-                        throw e;
-                    }
+            for (int i = 0; i < dataGridViewPaths.RowCount; i++) {
+                for (int j = 0; j < dataGridViewPaths.ColumnCount; j++) {
+                    if (graph[i, j] != -1)
+                        dataGridViewPaths[j, i].Value = graph[i, j, Graph.IndexatorOption.Cost];
                 }
             }
         }
@@ -82,8 +73,8 @@ namespace GraphsMinti
             try
             {
                 ReadGraphFromDataGrid();
-                int startIdx = Int32.Parse(comboBoxSource.SelectedItem.ToString());
-                int endIdx = Int32.Parse(comboBoxDest.SelectedItem.ToString());
+                int startIdx = comboBoxSource.SelectedIndex;
+                int endIdx = (comboBoxDest.SelectedIndex < comboBoxDest.Items.Count-1) ? comboBoxDest.SelectedIndex : -1;
                 mintiRez = graph.DoMinti(startIdx);
 
                 string filename = "graph.txt";
@@ -94,8 +85,10 @@ namespace GraphsMinti
 
             }
             catch (Exception exception) {
-                MessageBox.Show("Unable to calculate");
+                MessageBox.Show("Неможливо порахувати");
+#if DEBUG
                 throw;
+#endif
             }
         }
 
@@ -109,8 +102,10 @@ namespace GraphsMinti
                                 Int32.Parse(dataGridViewPaths[j, i].Value.ToString());
                     }
                     catch (Exception e) {
-                        MessageBox.Show("Unable to read Graph");
-                        throw e;
+                        MessageBox.Show("Неможливо зчитати");
+#if DEBUG
+                        throw;
+#endif
                     }
                 }
             }
@@ -133,22 +128,24 @@ namespace GraphsMinti
                 proc.WaitForExit();
 
             }
-            catch (Exception x)
-            {
-
+            catch (Exception e) {
+                MessageBox.Show("Неможливо згенерувати мережу");
+#if DEBUG
+                throw;
+#endif
             }
         }
 
         private void buttonShowMap_Click(object sender, EventArgs e) {
             if (mintiRez == null) {
-                MessageBox.Show("Nothing to show");
+                MessageBox.Show("Обчислення не проведені");
                 return;
             }
             try
             {
             
-                int startIdx = Int32.Parse(comboBoxSource.SelectedItem.ToString());
-                int endIdx = Int32.Parse(comboBoxDest.SelectedItem.ToString());
+                int startIdx = comboBoxSource.SelectedIndex;
+                int endIdx = (comboBoxDest.SelectedIndex < comboBoxDest.Items.Count - 1) ? comboBoxDest.SelectedIndex : -1;
 
                 string filename = "graph.txt";
                 string filepath = "C:\\Users\\Smith\\Downloads\\testRusnak";
@@ -159,16 +156,29 @@ namespace GraphsMinti
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Unable to show");
+                MessageBox.Show("Неможливо відобразити");
+#if DEBUG
                 throw;
+#endif
             }
         }
 
         private void saveGraphToolStripMenuItem_Click(object sender, EventArgs e) {
-            if (graph == null) { MessageBox.Show("Nothing to save"); return;}
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK) {
-                graph.save(saveFileDialog1.FileName);
+            try
+            {
+                if (graph == null) { ReadGraphFromDataGrid(); }
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    graph.save(saveFileDialog1.FileName);
+                }
             }
+            catch (Exception exception) {
+                MessageBox.Show("Неможливо зберегти");
+#if DEBUG
+                throw;
+#endif
+            }
+
         }
     }
 }
