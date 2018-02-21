@@ -15,6 +15,7 @@ namespace GraphsMinti
         private Graph graph;
         private int verticesCount;
         private Graph.MintiNode[] mintiRez;
+        private int mintiRezStartIdx;
         public GraphForm(int vertices)
         {
             InitializeComponent();
@@ -76,9 +77,10 @@ namespace GraphsMinti
                 int startIdx = comboBoxSource.SelectedIndex;
                 int endIdx = (comboBoxDest.SelectedIndex < comboBoxDest.Items.Count-1) ? comboBoxDest.SelectedIndex : -1;
                 mintiRez = graph.DoMinti(startIdx);
+                mintiRezStartIdx = startIdx;
 
                 string filename = "graph.txt";
-                string filepath = "C:\\Users\\Smith\\Downloads\\testRusnak";
+                string filepath = Directory.GetCurrentDirectory();
                 System.IO.File.WriteAllText(Path.Combine(filepath, filename), graph.ToDotGraph(startIdx, endIdx, mintiRez, checkBoxShowSingles.Checked));
                 GenerateGraph(filename, filepath);
                 System.Diagnostics.Process.Start(Path.Combine(filepath, filename.Replace(".txt", ".jpeg")));
@@ -113,9 +115,8 @@ namespace GraphsMinti
 
         private static void GenerateGraph(string fileName, string path)
         {
-            try
-            {
-                var command = string.Format("C:\\Users\\Smith\\Downloads\\testRusnak\\graphviz-2.38\\release\\bin\\dot -Tjpeg {0} -o {1}", Path.Combine(path, fileName), Path.Combine(path, fileName.Replace(".txt", ".jpeg")));
+            try {
+                var command = string.Format("\"\"" + Path.Combine(path, "gviz\\bin\\dot") + "\" -Tjpeg \"{0}\" -o \"{1}\"\"", Path.Combine(path, fileName), Path.Combine(path, fileName.Replace(".txt", ".jpeg")));
 
                 var procStartInfo = new System.Diagnostics.ProcessStartInfo("cmd", "/C " + command);
 
@@ -144,11 +145,11 @@ namespace GraphsMinti
             try
             {
             
-                int startIdx = comboBoxSource.SelectedIndex;
+                int startIdx = mintiRezStartIdx;
                 int endIdx = (comboBoxDest.SelectedIndex < comboBoxDest.Items.Count - 1) ? comboBoxDest.SelectedIndex : -1;
 
                 string filename = "graph.txt";
-                string filepath = "C:\\Users\\Smith\\Downloads\\testRusnak";
+                string filepath = Directory.GetCurrentDirectory();
                 System.IO.File.WriteAllText(Path.Combine(filepath, filename), graph.ToDotGraph(startIdx, endIdx, mintiRez, checkBoxShowSingles.Checked));
                 GenerateGraph(filename, filepath);
                 System.Diagnostics.Process.Start(Path.Combine(filepath, filename.Replace(".txt", ".jpeg")));

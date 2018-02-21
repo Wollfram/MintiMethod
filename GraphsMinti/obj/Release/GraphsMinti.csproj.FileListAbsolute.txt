@@ -1,0 +1,346 @@
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\GraphsMinti.exe.config
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\GraphsMinti.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\GraphsMinti.pdb
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\obj\Release\GraphsMinti.MainForm.resources
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\obj\Release\GraphsMinti.GraphForm.resources
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\obj\Release\GraphsMinti.Properties.Resources.resources
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\obj\Release\GraphsMinti.csproj.GenerateResource.Cache
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\obj\Release\GraphsMinti.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\obj\Release\GraphsMinti.pdb
+D:\Graphs\GraphsMinti\bin\Release\graphviz-2.38\bin\lefty.exe
+D:\Graphs\GraphsMinti\bin\Release\GraphsMinti.exe.config
+D:\Graphs\GraphsMinti\bin\Release\GraphsMinti.exe
+D:\Graphs\GraphsMinti\bin\Release\GraphsMinti.pdb
+D:\Graphs\GraphsMinti\obj\Release\GraphsMinti.csprojResolveAssemblyReference.cache
+D:\Graphs\GraphsMinti\obj\Release\GraphsMinti.MainForm.resources
+D:\Graphs\GraphsMinti\obj\Release\GraphsMinti.GraphForm.resources
+D:\Graphs\GraphsMinti\obj\Release\GraphsMinti.Properties.Resources.resources
+D:\Graphs\GraphsMinti\obj\Release\GraphsMinti.csproj.GenerateResource.Cache
+D:\Graphs\GraphsMinti\obj\Release\GraphsMinti.exe
+D:\Graphs\GraphsMinti\obj\Release\GraphsMinti.pdb
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\config6
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gd.tgz
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gd.zip
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\Graphviz.ini
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gts.lib
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gts.tgz
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\Settings.ini
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\Temp.rar
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\acyclic.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\ann.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\bcomps.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\ccomps.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\cdt.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\cgraph.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\circo.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\config.h
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\diffimg.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\dijkstra.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\dot.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\dotty.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\edgepaint.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\exparse.h
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\fc-cache.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\fc-cat.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\fc-list.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\fc-match.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\fdp.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\fontconfig.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\fontconfig_fix.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\freetype6.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gc.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\getopt.h
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\glut32.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gml2gv.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\graph1.jpeg
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\graph1.png
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\graphml2gv.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gv2gml.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gvc.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gvcolor.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gvedit.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\GVedit.html
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gvgen.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gvmap.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gvpack.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_core.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_dot_layout.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_gd.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_gdiplus.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_neato_layout.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_pango.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gvpr.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\gxl2gv.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\iconv.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\intl.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\jpeg62.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\lefty.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libatk-1.0-0.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libcairo-2.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libexpat-1.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libexpat.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libfontconfig-1.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libfreetype-6.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libgdk-win32-2.0-0.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libgdkglext-win32-1.0-0.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libgdk_pixbuf-2.0-0.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libgio-2.0-0.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libglade-2.0-0.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libglib-2.0-0.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libgmodule-2.0-0.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libgobject-2.0-0.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libgthread-2.0-0.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libgtk-win32-2.0-0.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libgtkglext-win32-1.0-0.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libltdl-3.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libpango-1.0-0.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libpangocairo-1.0-0.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libpangoft2-1.0-0.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libpangowin32-1.0-0.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libpng12.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libpng14-14.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\librsvg-2-2.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\libxml2.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\lneato.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\ltdl.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\mingle.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\mm2gv.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\neato.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\New Text Document.txt
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\nop.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\osage.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\patchwork.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\Pathplan.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\props.txt
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\prune.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\QtCore4.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\QtGui4.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\sccmap.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\sfdp.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\smyrna.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\tred.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\twopi.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\unflatten.exe
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\vmalloc.dll
+D:\Graphs\GraphsMinti\bin\Release\gviz\bin\zlib1.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\GraphsMinti.exe.config
+D:\Work Folder\Graphs\GraphsMinti\obj\Release\GraphsMinti.exe
+D:\Work Folder\Graphs\GraphsMinti\obj\Release\GraphsMinti.pdb
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\config6
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gd.tgz
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gd.zip
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\Graphviz.ini
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gts.lib
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gts.tgz
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\Settings.ini
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\Temp.rar
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\acyclic.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\ann.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\bcomps.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\ccomps.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\cdt.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\cgraph.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\circo.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\config.h
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\diffimg.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\dijkstra.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\dot.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\dotty.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\edgepaint.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\exparse.h
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\fc-cache.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\fc-cat.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\fc-list.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\fc-match.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\fdp.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\fontconfig.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\fontconfig_fix.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\freetype6.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gc.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\getopt.h
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\glut32.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gml2gv.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\graph1.jpeg
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\graph1.png
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\graphml2gv.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gv2gml.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gvc.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gvcolor.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gvedit.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\GVedit.html
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gvgen.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gvmap.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gvpack.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_core.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_dot_layout.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_gd.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_gdiplus.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_neato_layout.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_pango.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gvpr.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\gxl2gv.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\iconv.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\intl.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\jpeg62.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\lefty.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libatk-1.0-0.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libcairo-2.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libexpat-1.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libexpat.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libfontconfig-1.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libfreetype-6.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libgdk-win32-2.0-0.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libgdkglext-win32-1.0-0.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libgdk_pixbuf-2.0-0.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libgio-2.0-0.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libglade-2.0-0.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libglib-2.0-0.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libgmodule-2.0-0.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libgobject-2.0-0.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libgthread-2.0-0.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libgtk-win32-2.0-0.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libgtkglext-win32-1.0-0.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libltdl-3.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libpango-1.0-0.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libpangocairo-1.0-0.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libpangoft2-1.0-0.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libpangowin32-1.0-0.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libpng12.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libpng14-14.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\librsvg-2-2.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\libxml2.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\lneato.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\ltdl.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\mingle.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\mm2gv.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\neato.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\New Text Document.txt
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\nop.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\osage.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\patchwork.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\Pathplan.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\props.txt
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\prune.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\QtCore4.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\QtGui4.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\sccmap.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\sfdp.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\smyrna.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\tred.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\twopi.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\unflatten.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\vmalloc.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\gviz\bin\zlib1.dll
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\GraphsMinti.exe
+D:\Work Folder\Graphs\GraphsMinti\bin\Release\GraphsMinti.pdb
+D:\Work Folder\Graphs\GraphsMinti\obj\Release\GraphsMinti.csprojResolveAssemblyReference.cache
+D:\Work Folder\Graphs\GraphsMinti\obj\Release\GraphsMinti.MainForm.resources
+D:\Work Folder\Graphs\GraphsMinti\obj\Release\GraphsMinti.GraphForm.resources
+D:\Work Folder\Graphs\GraphsMinti\obj\Release\GraphsMinti.Properties.Resources.resources
+D:\Work Folder\Graphs\GraphsMinti\obj\Release\GraphsMinti.csproj.GenerateResource.Cache
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\config6
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gd.tgz
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gd.zip
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\Graphviz.ini
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gts.lib
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gts.tgz
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\Settings.ini
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\Temp.rar
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\acyclic.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\ann.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\bcomps.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\ccomps.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\cdt.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\cgraph.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\circo.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\config.h
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\diffimg.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\dijkstra.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\dot.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\dotty.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\edgepaint.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\exparse.h
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\fc-cache.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\fc-cat.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\fc-list.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\fc-match.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\fdp.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\fontconfig.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\fontconfig_fix.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\freetype6.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gc.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\getopt.h
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\glut32.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gml2gv.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\graph1.jpeg
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\graph1.png
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\graphml2gv.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gv2gml.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gvc.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gvcolor.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gvedit.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\GVedit.html
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gvgen.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gvmap.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gvpack.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_core.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_dot_layout.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_gd.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_gdiplus.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_neato_layout.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gvplugin_pango.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gvpr.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\gxl2gv.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\iconv.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\intl.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\jpeg62.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\lefty.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libatk-1.0-0.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libcairo-2.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libexpat-1.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libexpat.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libfontconfig-1.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libfreetype-6.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libgdk-win32-2.0-0.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libgdkglext-win32-1.0-0.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libgdk_pixbuf-2.0-0.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libgio-2.0-0.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libglade-2.0-0.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libglib-2.0-0.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libgmodule-2.0-0.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libgobject-2.0-0.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libgthread-2.0-0.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libgtk-win32-2.0-0.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libgtkglext-win32-1.0-0.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libltdl-3.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libpango-1.0-0.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libpangocairo-1.0-0.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libpangoft2-1.0-0.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libpangowin32-1.0-0.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libpng12.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libpng14-14.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\librsvg-2-2.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\libxml2.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\lneato.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\ltdl.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\mingle.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\mm2gv.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\neato.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\New Text Document.txt
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\nop.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\osage.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\patchwork.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\Pathplan.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\props.txt
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\prune.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\QtCore4.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\QtGui4.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\sccmap.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\sfdp.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\smyrna.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\tred.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\twopi.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\unflatten.exe
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\vmalloc.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\bin\Release\gviz\bin\zlib1.dll
+D:\Work Folder\ЧНУ\VS\Graphs\GraphsMinti\obj\Release\GraphsMinti.csprojResolveAssemblyReference.cache

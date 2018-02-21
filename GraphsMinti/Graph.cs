@@ -46,7 +46,6 @@ namespace GraphsMinti
             }
         }
 
-
         public class MintiNode
         {
             public int distance;
@@ -56,6 +55,7 @@ namespace GraphsMinti
                 this.prevVertexIdxs = prevVertexIdxs;
             }
         }
+
         /// <summary>
         /// Method Minti
         /// </summary>
@@ -108,6 +108,14 @@ namespace GraphsMinti
             return rez;
         }
 
+        /// <summary>
+        /// returns dot-graph script
+        /// </summary>
+        /// <param name="startIdx"></param>
+        /// <param name="destIdx">if negative - show all pathes</param>
+        /// <param name="mintiRez"></param>
+        /// <param name="showSingle">if show isolated nodes</param>
+        /// <returns></returns>
         public string ToDotGraph(int startIdx, int destIdx, MintiNode[] mintiRez, bool showSingle)
         {
             StringBuilder b = new StringBuilder();

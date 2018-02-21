@@ -44,7 +44,7 @@
             // 
             // buttonCreateNewGraph
             // 
-            this.buttonCreateNewGraph.Location = new System.Drawing.Point(116, 72);
+            this.buttonCreateNewGraph.Location = new System.Drawing.Point(111, 71);
             this.buttonCreateNewGraph.Name = "buttonCreateNewGraph";
             this.buttonCreateNewGraph.Size = new System.Drawing.Size(125, 34);
             this.buttonCreateNewGraph.TabIndex = 0;
@@ -55,7 +55,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(113, 21);
+            this.label1.Location = new System.Drawing.Point(108, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 13);
             this.label1.TabIndex = 1;
@@ -63,14 +63,14 @@
             // 
             // textBoxVertex
             // 
-            this.textBoxVertex.Location = new System.Drawing.Point(128, 46);
+            this.textBoxVertex.Location = new System.Drawing.Point(123, 45);
             this.textBoxVertex.Name = "textBoxVertex";
             this.textBoxVertex.Size = new System.Drawing.Size(100, 20);
             this.textBoxVertex.TabIndex = 2;
             // 
             // buttonOpen
             // 
-            this.buttonOpen.Location = new System.Drawing.Point(97, 41);
+            this.buttonOpen.Location = new System.Drawing.Point(75, 43);
             this.buttonOpen.Name = "buttonOpen";
             this.buttonOpen.Size = new System.Drawing.Size(165, 45);
             this.buttonOpen.TabIndex = 3;
