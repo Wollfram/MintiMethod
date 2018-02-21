@@ -22,10 +22,10 @@ namespace GraphsMinti
             for (int i = 0; i < vertices; i++) {
                 comboBoxSource.Items.Add(i);
                 comboBoxDest.Items.Add(i);
-                dataGridViewPaths.Columns.Add(i.ToString(), i.ToString());
+                dataGridViewPaths.Columns.Add(i.ToString(), (i+1).ToString());
                 dataGridViewPaths.Columns[i].Width = 30;
                 dataGridViewPaths.Rows.Add();
-                dataGridViewPaths.Rows[i].HeaderCell.Value = i.ToString();
+                dataGridViewPaths.Rows[i].HeaderCell.Value = (i+1).ToString();
                 dataGridViewPaths.Rows[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 dataGridViewPaths[i, i].ReadOnly = true;
                 dataGridViewPaths[i, i].Value = 0;
@@ -43,10 +43,10 @@ namespace GraphsMinti
             {
                 comboBoxSource.Items.Add(i);
                 comboBoxDest.Items.Add(i);
-                dataGridViewPaths.Columns.Add(i.ToString(), i.ToString());
+                dataGridViewPaths.Columns.Add(i.ToString(), (i+1).ToString());
                 dataGridViewPaths.Columns[i].Width = 30;
                 dataGridViewPaths.Rows.Add();
-                dataGridViewPaths.Rows[i].HeaderCell.Value = i.ToString();
+                dataGridViewPaths.Rows[i].HeaderCell.Value = (i+1).ToString();
                 dataGridViewPaths.Rows[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 dataGridViewPaths[i, i].ReadOnly = true;
                 dataGridViewPaths[i, i].Value = 0;
@@ -170,7 +170,5 @@ namespace GraphsMinti
                 graph.save(saveFileDialog1.FileName);
             }
         }
-
-     
     }
 }
