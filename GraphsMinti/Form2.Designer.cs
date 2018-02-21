@@ -83,7 +83,7 @@
             // 
             this.comboBoxSource.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxSource.FormattingEnabled = true;
-            this.comboBoxSource.Location = new System.Drawing.Point(75, 333);
+            this.comboBoxSource.Location = new System.Drawing.Point(75, 335);
             this.comboBoxSource.Name = "comboBoxSource";
             this.comboBoxSource.Size = new System.Drawing.Size(97, 21);
             this.comboBoxSource.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 341);
+            this.label2.Location = new System.Drawing.Point(12, 338);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 1;
@@ -124,7 +124,7 @@
             // 
             this.comboBoxDest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxDest.FormattingEnabled = true;
-            this.comboBoxDest.Location = new System.Drawing.Point(75, 367);
+            this.comboBoxDest.Location = new System.Drawing.Point(75, 365);
             this.comboBoxDest.Name = "comboBoxDest";
             this.comboBoxDest.Size = new System.Drawing.Size(97, 21);
             this.comboBoxDest.TabIndex = 4;
@@ -162,8 +162,8 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(24, 20);
-            this.toolStripMenuItem1.Text = "?";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
+            this.toolStripMenuItem1.Text = "Довідка";
             // 
             // checkBoxShowSingles
             // 

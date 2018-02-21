@@ -105,9 +105,7 @@ namespace GraphsMinti
                     }
                     catch (Exception e) {
                         MessageBox.Show("Неможливо зчитати");
-#if DEBUG
                         throw;
-#endif
                     }
                 }
             }
