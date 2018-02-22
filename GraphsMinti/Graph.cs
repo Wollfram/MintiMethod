@@ -21,11 +21,11 @@ namespace GraphsMinti
         /// if pathCounts == -1 - no way
         /// else this is way cost
         /// </summary>
-        private int[,] pathCosts;
+        private double[,] pathCosts;
 
         public Graph(int vertexCount) {
             this.vertexCount = vertexCount;
-            pathCosts = new int[vertexCount,vertexCount];
+            pathCosts = new double[vertexCount,vertexCount];
             for (int i = 0; i < vertexCount; i++) {
                 for (int j = 0; j < vertexCount; j++) {
                     pathCosts[i,j] = -1;
@@ -33,7 +33,7 @@ namespace GraphsMinti
             }
         }
 
-        public int this[int i, int j, IndexatorOption optin = IndexatorOption.Cost] {
+        public double this[int i, int j, IndexatorOption optin = IndexatorOption.Cost] {
             set {
                 pathCosts[i, j] = value;
             }
@@ -48,9 +48,9 @@ namespace GraphsMinti
 
         public class MintiNode
         {
-            public int distance;
+            public double distance;
             public int prevVertexIdxs;
-            public MintiNode(int distance, int prevVertexIdxs) {
+            public MintiNode(double distance, int prevVertexIdxs) {
                 this.distance = distance;
                 this.prevVertexIdxs = prevVertexIdxs;
             }
@@ -67,18 +67,19 @@ namespace GraphsMinti
             rez[startVertex] = new MintiNode(0,-1);
   
             //first - vertex idx, last - distance
-            Dictionary<int,int> vertexInProcessI = new Dictionary<int, int>();
+            Dictionary<int,double> vertexInProcessI = new Dictionary<int, double>();
             vertexInProcessI.Add(startVertex,0);
 
             while (vertexInProcessI.Count > 0) {
-                int minDist = Int32.MaxValue;
+                double minDist = Double.MaxValue;
                 int candidat = -1;
                 int prevMinNode= -1;
 
                 foreach (var di in vertexInProcessI) {
                     for (int j = 0; j < vertexCount; j++) {
-                        if (pathCosts[di.Key,j] <= 0 || rez[j] != null) continue;
-                        int dist = di.Value + pathCosts[di.Key, j];
+                     //   if (pathCosts[di.Key,j] <= 0 || rez[j] != null) continue;
+                        if (pathCosts[di.Key, j] < 0 || rez[j] != null) continue;
+                        double dist = di.Value + pathCosts[di.Key, j];
                         if (dist < minDist) {
                             minDist = dist;
                             candidat = j;
@@ -95,7 +96,8 @@ namespace GraphsMinti
                 foreach (var di in vertexInProcessI) {
                     int j = 0;
                     for (; j < vertexCount; j++) {
-                        if(pathCosts[di.Key,j] <= 0) continue;
+                        if(pathCosts[di.Key,j] < 0) continue;
+                  //      if (pathCosts[di.Key, j] <= 0) continue;
                         if (rez[j] == null) break;
                     }
                     if (j == vertexCount)
@@ -130,7 +132,7 @@ namespace GraphsMinti
             return b.ToString();
         }
 
-        private string ToDot(int startIdx, int DestIdx, MintiNode[] mintiRez, bool showSingle) //todo destidx == -1
+        private string ToDot(int startIdx, int DestIdx, MintiNode[] mintiRez, bool showSingle)
         {
             bool ShowAll = (DestIdx == -1);
 
@@ -140,8 +142,9 @@ namespace GraphsMinti
                     bool hasOutLink = false;
                     for (int j = 0; j < vertexCount; j++) {
 
-                        if (pathCosts[i, j] > 0) {
-                            hasOutLink = true;
+                    //    if (pathCosts[i, j] > 0) {
+                            if (pathCosts[i, j] >= 0) {
+                                hasOutLink = true;
 
                             b.Append($"\"{i+1}\" -> \"{j+1}\" [label = \"{pathCosts[i, j]}\"");
                             if (mintiRez[j] != null &&(mintiRez[j].prevVertexIdxs == i)) b.Append(" color = red fontcolor = red]");
@@ -152,7 +155,8 @@ namespace GraphsMinti
                     if (!hasOutLink && showSingle) {
                         int k = 0;
                         for (; k < vertexCount; k++) {
-                            if (pathCosts[k, i] > 0) break;
+                        //    if (pathCosts[k, i] > 0) break;
+                            if (pathCosts[k, i] >= 0) break;
                         }
                         if (k == vertexCount && i != 0) {
                             b.Append($"node[shape = circle color = black] \"{i + 1}\";");
@@ -179,8 +183,9 @@ namespace GraphsMinti
                     for (int j = 0; j < vertexCount; j++)
                     {
 
-                        if (pathCosts[i, j] > 0)
-                        {
+                        if (pathCosts[i, j] >= 0)
+                       //     if (pathCosts[i, j] > 0)
+                            {
                             hasOutLink = true;
 
 
@@ -196,7 +201,8 @@ namespace GraphsMinti
                         int k = 0;
                         for (; k < vertexCount; k++)
                         {
-                            if (pathCosts[k, i] > 0) break;
+                          //  if (pathCosts[k, i] > 0) break;
+                            if (pathCosts[k, i] >= 0) break;
                         }
                         if (k == vertexCount && i != 0)
                         {

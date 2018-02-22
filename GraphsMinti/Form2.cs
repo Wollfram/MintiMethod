@@ -28,10 +28,10 @@ namespace GraphsMinti
                 dataGridViewPaths.Rows.Add();
                 dataGridViewPaths.Rows[i].HeaderCell.Value = (i+1).ToString();
                 dataGridViewPaths.Rows[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                dataGridViewPaths[i, i].ReadOnly = true;
-                dataGridViewPaths[i, i].Value = 0;
+             //   dataGridViewPaths[i, i].ReadOnly = true;
+             //   dataGridViewPaths[i, i].Value = 0;
             }
-            comboBoxDest.Items.Add("Усі шляхи");
+            comboBoxDest.Items.Add("Будь який");
             comboBoxSource.SelectedIndex = 0;
             comboBoxDest.SelectedIndex = comboBoxDest.Items.Count-1;
             
@@ -49,8 +49,8 @@ namespace GraphsMinti
                 dataGridViewPaths.Rows.Add();
                 dataGridViewPaths.Rows[i].HeaderCell.Value = (i + 1).ToString();
                 dataGridViewPaths.Rows[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                dataGridViewPaths[i, i].ReadOnly = true;
-                dataGridViewPaths[i, i].Value = 0;
+            //    dataGridViewPaths[i, i].ReadOnly = true;
+            //    dataGridViewPaths[i, i].Value = 0;
             }
             comboBoxDest.Items.Add("All");
             comboBoxSource.SelectedIndex = 0;
@@ -101,7 +101,7 @@ namespace GraphsMinti
                     try {
                         if (dataGridViewPaths[j, i].Value != null)
                             graph[i, j, Graph.IndexatorOption.Cost] =
-                                Int32.Parse(dataGridViewPaths[j, i].Value.ToString());
+                                Double.Parse(dataGridViewPaths[j, i].Value.ToString());
                     }
                     catch (Exception e) {
                         MessageBox.Show("Неможливо зчитати");
@@ -178,6 +178,21 @@ namespace GraphsMinti
 #endif
             }
 
+        }
+
+        private void dataGridViewPaths_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            try {
+                if (e.ColumnIndex >= 0 && e.RowIndex >= 0 &&
+                    dataGridViewPaths[e.ColumnIndex, e.RowIndex].Value != null) {
+                    double a = double.Parse(dataGridViewPaths[e.ColumnIndex, e.RowIndex].Value.ToString());
+                    if (a < 0) throw new Exception();
+                }
+            }
+            catch (Exception exception) {
+                dataGridViewPaths[e.ColumnIndex, e.RowIndex].Value = null;
+                MessageBox.Show("Введіть дійсне додатнє число через \',\'");
+            }
         }
     }
 }
