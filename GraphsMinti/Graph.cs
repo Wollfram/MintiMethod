@@ -82,7 +82,6 @@ namespace GraphsMinti
 
                 foreach (var di in vertexInProcessI) {
                     for (int j = 0; j < vertexCount; j++) {
-                     //   if (pathCosts[di.Key,j] <= 0 || rez[j] != null) continue;
                         if (pathCosts[di.Key, j] < 0 || rez[j] != null) continue;
                         double dist = di.Value + pathCosts[di.Key, j];
                         if (dist < minDist) {
@@ -102,18 +101,17 @@ namespace GraphsMinti
                     vertexInProcessI.Add(candidat, minDist);
                 }
 
-                List<int> toRemove = new List<int>();
+                List<int> toUnprocess = new List<int>();
                 foreach (var di in vertexInProcessI) {
                     int j = 0;
                     for (; j < vertexCount; j++) {
                         if(pathCosts[di.Key,j] < 0) continue;
-                  //      if (pathCosts[di.Key, j] <= 0) continue;
                         if (rez[j] == null) break;
                     }
                     if (j == vertexCount)
-                      toRemove.Add(di.Key);
+                      toUnprocess.Add(di.Key);
                 }
-                foreach (var i in toRemove) {
+                foreach (var i in toUnprocess) {
                     vertexInProcessI.Remove(i);
                 }
             }
@@ -128,7 +126,7 @@ namespace GraphsMinti
         /// <param name="mintiRez"></param>
         /// <param name="showSingle">if show isolated nodes</param>
         /// <returns></returns>
-        public string ToDotGraph(int startIdx, int destIdx, MintiNode[] mintiRez, bool showSingle)
+        public string ToMintyDotGraph(int startIdx, int destIdx, MintiNode[] mintiRez, bool showSingle)
         {
             StringBuilder b = new StringBuilder();
             b.Append("digraph G {" + Environment.NewLine + "rankdir = LR;" + Environment.NewLine + "size = \""+(vertexCount > 10 ? vertexCount: 10).ToString() +"\"" +
@@ -137,27 +135,25 @@ namespace GraphsMinti
             if (destIdx != -1)
                 b.Append("node[shape = doublecircle color = red]; \"" + (destIdx+1) + "\";" + Environment.NewLine);
             b.Append("node[shape = circle color = black];" + Environment.NewLine);
-            b.Append(ToDot(startIdx,destIdx,mintiRez,showSingle));
+            b.Append(ToMintyDot(startIdx,destIdx,mintiRez,showSingle));
             b.Append("}");
             return b.ToString();
         }
 
-        private string ToDot(int startIdx, int DestIdx, MintiNode[] mintiRez, bool showSingle)
+        private string ToMintyDot(int startIdx, int destIdx, MintiNode[] mintiRez, bool showSingle)
         {
-            bool ShowAll = (DestIdx == -1);
+            bool showAll = (destIdx == -1);
 
             StringBuilder b = new StringBuilder();
-            if (ShowAll) { //show all short ways
+            if (showAll) { //show all short ways
                 for (int i = 0; i < vertexCount; i++) {
                     bool hasOutLink = false;
                     for (int j = 0; j < vertexCount; j++) {
 
-                    //    if (pathCosts[i, j] > 0) {
                         if (pathCosts[i, j] >= 0) {
                             hasOutLink = true;
 
                             b.Append($"\"{i + 1}\" -> \"{j + 1}\" [label = \"{pathCosts[i, j]}\"");
-                            //  if (mintiRez[j] != null &&(mintiRez[j].prevVertexIdxs == i)) b.Append(" color = red fontcolor = red]");
                             if (mintiRez[j] != null) {
                                 if (mintiRez[j].prevVertexIdxs == i) b.Append(" color = red fontcolor = red]");
                                 else if (mintiRez[j].otherPrevWayIdxs != null &&
@@ -188,7 +184,7 @@ namespace GraphsMinti
                 // 2 - second way
                 // 0 - no action
                 short[,] mainRoadWayTable = new short[vertexCount, vertexCount];
-                int tmp = DestIdx;
+                int tmp = destIdx;
                 if (mintiRez[tmp] != null)
                 {
                     List<int> secondaryWaysToProcess = new List<int>();
@@ -227,7 +223,6 @@ namespace GraphsMinti
                 {
                     bool hasOutLink = false;
                     for (int j = 0; j < vertexCount; j++) {
-                        //     if (pathCosts[i, j] > 0)
                         if (pathCosts[i, j] >= 0) {
                             hasOutLink = true;
 
@@ -243,7 +238,6 @@ namespace GraphsMinti
                         int k = 0;
                         for (; k < vertexCount; k++)
                         {
-                          //  if (pathCosts[k, i] > 0) break;
                             if (pathCosts[k, i] >= 0) break;
                         }
                         if (k == vertexCount && i != 0)
@@ -256,23 +250,23 @@ namespace GraphsMinti
 
             }
             b.AppendFormat("overlap = false" + Environment.NewLine);
-            if (DestIdx != -1) {
-                if (mintiRez[DestIdx] != null)
-                    b.Append("label = \"Відстань до стоку " + mintiRez[DestIdx].distance + "\"");
+            if (destIdx != -1) {
+                if (mintiRez[destIdx] != null)
+                    b.Append("label = \"Відстань до стоку " + mintiRez[destIdx].distance + "\"");
             }
             else {
-                b.Append((startIdx == DestIdx || DestIdx == -1 ? "label = \"Показано всі шляхи\"" : "label = \"Стік недосяжний\"") + Environment.NewLine +
+                b.Append((startIdx == destIdx || destIdx == -1 ? "label = \"Показано всі шляхи\"" : "label = \"Стік недосяжний\"") + Environment.NewLine +
                     "fontsize = 12;" + Environment.NewLine);
             }
             return b.ToString();
         }
 
-        public void save(string filename)
+        public void Save(string filename)
         {
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream fs = new FileStream(filename, FileMode.OpenOrCreate)) { formatter.Serialize(fs, this); }
         }
-        public static Graph load(string filename)
+        public static Graph Load(string filename)
         {
             BinaryFormatter formatter = new BinaryFormatter();
             Graph newobj;

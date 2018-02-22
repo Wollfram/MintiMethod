@@ -11,7 +11,9 @@ using System.Windows.Forms;
 
 namespace GraphsMinti
 {
-    public partial class GraphForm : Form {
+    public partial class GraphForm : Form
+    {        //for double comparsion
+        private static double TOLERANCE = 0.00001;
         private Graph graph;
         private int verticesCount;
         private Graph.MintiNode[] mintiRez;
@@ -28,8 +30,6 @@ namespace GraphsMinti
                 dataGridViewPaths.Rows.Add();
                 dataGridViewPaths.Rows[i].HeaderCell.Value = (i+1).ToString();
                 dataGridViewPaths.Rows[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-             //   dataGridViewPaths[i, i].ReadOnly = true;
-             //   dataGridViewPaths[i, i].Value = 0;
             }
             comboBoxDest.Items.Add("Будь який");
             comboBoxSource.SelectedIndex = 0;
@@ -37,10 +37,10 @@ namespace GraphsMinti
             
         }
 
-        public GraphForm(Graph _graph) {
+        public GraphForm(Graph graph) {
             InitializeComponent();
-            verticesCount = _graph.VertexCount;
-            graph = _graph;
+            verticesCount = graph.VertexCount;
+            this.graph = graph;
             for (int i = 0; i < verticesCount; i++) {
                 comboBoxSource.Items.Add(i + 1);
                 comboBoxDest.Items.Add(i + 1);
@@ -49,8 +49,6 @@ namespace GraphsMinti
                 dataGridViewPaths.Rows.Add();
                 dataGridViewPaths.Rows[i].HeaderCell.Value = (i + 1).ToString();
                 dataGridViewPaths.Rows[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            //    dataGridViewPaths[i, i].ReadOnly = true;
-            //    dataGridViewPaths[i, i].Value = 0;
             }
             comboBoxDest.Items.Add("All");
             comboBoxSource.SelectedIndex = 0;
@@ -58,8 +56,8 @@ namespace GraphsMinti
 
             for (int i = 0; i < dataGridViewPaths.RowCount; i++) {
                 for (int j = 0; j < dataGridViewPaths.ColumnCount; j++) {
-                    if (graph[i, j] != -1)
-                        dataGridViewPaths[j, i].Value = graph[i, j, Graph.IndexatorOption.Cost];
+                    if (Math.Abs(this.graph[i, j] - (-1)) > TOLERANCE)
+                        dataGridViewPaths[j, i].Value = this.graph[i, j];
                 }
             }
         }
@@ -81,7 +79,7 @@ namespace GraphsMinti
 
                 string filename = "graph.txt";
                 string filepath = Directory.GetCurrentDirectory();
-                System.IO.File.WriteAllText(Path.Combine(filepath, filename), graph.ToDotGraph(startIdx, endIdx, mintiRez, checkBoxShowSingles.Checked));
+                System.IO.File.WriteAllText(Path.Combine(filepath, filename), graph.ToMintyDotGraph(startIdx, endIdx, mintiRez, checkBoxShowSingles.Checked));
                 GenerateGraph(filename, filepath);
                 System.Diagnostics.Process.Start(Path.Combine(filepath, filename.Replace(".txt", ".jpeg")));
 
@@ -100,7 +98,7 @@ namespace GraphsMinti
                 for (int j = 0; j < dataGridViewPaths.ColumnCount; j++) {
                     try {
                         if (dataGridViewPaths[j, i].Value != null)
-                            graph[i, j, Graph.IndexatorOption.Cost] =
+                            graph[i, j] =
                                 Double.Parse(dataGridViewPaths[j, i].Value.ToString());
                     }
                     catch (Exception e) {
@@ -148,7 +146,7 @@ namespace GraphsMinti
 
                 string filename = "graph.txt";
                 string filepath = Directory.GetCurrentDirectory();
-                System.IO.File.WriteAllText(Path.Combine(filepath, filename), graph.ToDotGraph(startIdx, endIdx, mintiRez, checkBoxShowSingles.Checked));
+                System.IO.File.WriteAllText(Path.Combine(filepath, filename), graph.ToMintyDotGraph(startIdx, endIdx, mintiRez, checkBoxShowSingles.Checked));
                 GenerateGraph(filename, filepath);
                 System.Diagnostics.Process.Start(Path.Combine(filepath, filename.Replace(".txt", ".jpeg")));
 
@@ -168,7 +166,7 @@ namespace GraphsMinti
                 if (graph == null) { ReadGraphFromDataGrid(); }
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    graph.save(saveFileDialog1.FileName);
+                    graph.Save(saveFileDialog1.FileName);
                 }
             }
             catch (Exception exception) {

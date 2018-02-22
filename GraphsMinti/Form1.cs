@@ -36,7 +36,7 @@ namespace GraphsMinti
             try {
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    GraphForm gf = new GraphForm(Graph.load(openFileDialog1.FileName));
+                    GraphForm gf = new GraphForm(Graph.Load(openFileDialog1.FileName));
                     gf.Show(this);
                 }
             }
@@ -46,12 +46,7 @@ namespace GraphsMinti
                 throw;
 #endif
             }
-
         }
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-   
-        }
     }
 }
