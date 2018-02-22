@@ -91,7 +91,7 @@ namespace GraphsMinti
                             prevMinNode = di.Key;
                             otherWays.Clear();
                         }
-                        else if (Math.Abs(dist - minDist) < TOLERANCE) {
+                        else if (Math.Abs(dist - minDist) < TOLERANCE && candidat == j) {
                             otherWays.Add(di.Key);
                         }
                     }
@@ -184,14 +184,43 @@ namespace GraphsMinti
             }
             else
             {// show one way
-                bool[,] mainRoadWayTable = new bool[vertexCount, vertexCount];
+                // 1 - main way
+                // 2 - second way
+                // 0 - no action
+                short[,] mainRoadWayTable = new short[vertexCount, vertexCount];
                 int tmp = DestIdx;
                 if (mintiRez[tmp] != null)
                 {
+                    List<int> secondaryWaysToProcess = new List<int>();
                     while (tmp != startIdx)
                     {
-                        mainRoadWayTable[mintiRez[tmp].prevVertexIdxs, tmp] = true;
+                        mainRoadWayTable[mintiRez[tmp].prevVertexIdxs, tmp] = 1;
+                        if (mintiRez[tmp].otherPrevWayIdxs != null) {
+                            foreach (var opwi in mintiRez[tmp].otherPrevWayIdxs) {
+                                mainRoadWayTable[opwi, tmp] = 2;
+                                secondaryWaysToProcess.Add(opwi);
+                            }
+                        }
                         tmp = mintiRez[tmp].prevVertexIdxs;
+                    }
+                    while (secondaryWaysToProcess.Count > 0) {
+                        int curNodeIdx = secondaryWaysToProcess[0];
+                        if (mintiRez[curNodeIdx].prevVertexIdxs != -1) {
+                            if (mainRoadWayTable[mintiRez[curNodeIdx].prevVertexIdxs, curNodeIdx] == 0) {
+                                mainRoadWayTable[mintiRez[curNodeIdx].prevVertexIdxs, curNodeIdx] = 2;
+                                secondaryWaysToProcess.Add(mintiRez[curNodeIdx].prevVertexIdxs);
+                            }
+                            if (mintiRez[curNodeIdx].otherPrevWayIdxs != null) {
+                                foreach (var opwi in mintiRez[curNodeIdx].otherPrevWayIdxs) {
+                                    if (mainRoadWayTable[opwi, curNodeIdx] == 0) {
+                                        mainRoadWayTable[opwi, curNodeIdx] = 2;
+                                        secondaryWaysToProcess.Add(opwi);
+                                    }
+                                }
+
+                            }
+                        }
+                        secondaryWaysToProcess.RemoveAt(0);
                     }
                 }
                 for (int i = 0; i < vertexCount; i++)
@@ -203,7 +232,8 @@ namespace GraphsMinti
                             hasOutLink = true;
 
                             b.Append($"\"{i + 1}\" -> \"{j + 1}\" [label = \"{pathCosts[i, j]}\"");
-                            if (mainRoadWayTable[i, j]) b.Append(" color = red fontcolor = red]");
+                            if (mainRoadWayTable[i, j] == 1) b.Append(" color = red fontcolor = red]");
+                            else if (mainRoadWayTable[i, j] == 2) b.Append(" color = magenta fontcolor = magenta]");
                             else b.Append("]");
                             b.AppendLine();
                         }
