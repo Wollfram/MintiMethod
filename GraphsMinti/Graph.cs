@@ -10,6 +10,8 @@ namespace GraphsMinti
 {
     [Serializable]
     public class Graph {
+        //for double comparsion
+        private static double TOLERANCE = 0.00001;
         public enum IndexatorOption {
             Cost, HasWay
         }
@@ -50,9 +52,11 @@ namespace GraphsMinti
         {
             public double distance;
             public int prevVertexIdxs;
-            public MintiNode(double distance, int prevVertexIdxs) {
+            public List<int> otherPrevWayIdxs = null;
+            public MintiNode(double distance, int prevVertexIdxs, List<int> otherPrevWays = null) {
                 this.distance = distance;
                 this.prevVertexIdxs = prevVertexIdxs;
+                otherPrevWayIdxs = otherPrevWays;
             }
         }
 
@@ -64,7 +68,7 @@ namespace GraphsMinti
         /// and  prevNode of min path to this vertex], if rez[i] == null - vertex i is unreachable</returns>
         public MintiNode[] DoMinti(int startVertex) {
             MintiNode[] rez = new MintiNode[vertexCount];
-            rez[startVertex] = new MintiNode(0,-1);
+            rez[startVertex] = new MintiNode(0,-1,null);
   
             //first - vertex idx, last - distance
             Dictionary<int,double> vertexInProcessI = new Dictionary<int, double>();
@@ -74,6 +78,7 @@ namespace GraphsMinti
                 double minDist = Double.MaxValue;
                 int candidat = -1;
                 int prevMinNode= -1;
+                List<int> otherWays = new List<int>();
 
                 foreach (var di in vertexInProcessI) {
                     for (int j = 0; j < vertexCount; j++) {
@@ -84,11 +89,16 @@ namespace GraphsMinti
                             minDist = dist;
                             candidat = j;
                             prevMinNode = di.Key;
+                            otherWays.Clear();
+                        }
+                        else if (Math.Abs(dist - minDist) < TOLERANCE) {
+                            otherWays.Add(di.Key);
                         }
                     }
                 }
                 if (candidat != -1) {
                     rez[candidat] = new MintiNode(minDist, prevMinNode);
+                    if (otherWays.Count != 0) rez[candidat].otherPrevWayIdxs = otherWays;
                     vertexInProcessI.Add(candidat, minDist);
                 }
 
@@ -143,11 +153,18 @@ namespace GraphsMinti
                     for (int j = 0; j < vertexCount; j++) {
 
                     //    if (pathCosts[i, j] > 0) {
-                            if (pathCosts[i, j] >= 0) {
-                                hasOutLink = true;
+                        if (pathCosts[i, j] >= 0) {
+                            hasOutLink = true;
 
-                            b.Append($"\"{i+1}\" -> \"{j+1}\" [label = \"{pathCosts[i, j]}\"");
-                            if (mintiRez[j] != null &&(mintiRez[j].prevVertexIdxs == i)) b.Append(" color = red fontcolor = red]");
+                            b.Append($"\"{i + 1}\" -> \"{j + 1}\" [label = \"{pathCosts[i, j]}\"");
+                            //  if (mintiRez[j] != null &&(mintiRez[j].prevVertexIdxs == i)) b.Append(" color = red fontcolor = red]");
+                            if (mintiRez[j] != null) {
+                                if (mintiRez[j].prevVertexIdxs == i) b.Append(" color = red fontcolor = red]");
+                                else if (mintiRez[j].otherPrevWayIdxs != null &&
+                                         mintiRez[j].otherPrevWayIdxs.Contains(i))
+                                    b.Append(" color = magenta fontcolor = magenta]");
+                                else b.Append("]");
+                            }
                             else b.Append("]");
                             b.AppendLine();
                         }
@@ -169,7 +186,7 @@ namespace GraphsMinti
             {// show one way
                 bool[,] mainRoadWayTable = new bool[vertexCount, vertexCount];
                 int tmp = DestIdx;
-                if (mintiRez[tmp] != null && tmp != -1)
+                if (mintiRez[tmp] != null)
                 {
                     while (tmp != startIdx)
                     {
@@ -180,19 +197,14 @@ namespace GraphsMinti
                 for (int i = 0; i < vertexCount; i++)
                 {
                     bool hasOutLink = false;
-                    for (int j = 0; j < vertexCount; j++)
-                    {
-
-                        if (pathCosts[i, j] >= 0)
-                       //     if (pathCosts[i, j] > 0)
-                            {
+                    for (int j = 0; j < vertexCount; j++) {
+                        //     if (pathCosts[i, j] > 0)
+                        if (pathCosts[i, j] >= 0) {
                             hasOutLink = true;
-
 
                             b.Append($"\"{i + 1}\" -> \"{j + 1}\" [label = \"{pathCosts[i, j]}\"");
                             if (mainRoadWayTable[i, j]) b.Append(" color = red fontcolor = red]");
                             else b.Append("]");
-
                             b.AppendLine();
                         }
                     }
