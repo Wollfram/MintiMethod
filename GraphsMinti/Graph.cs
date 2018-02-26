@@ -218,7 +218,7 @@ namespace GraphsMinti
             {// show one way
                 // 1 - main way
                 // 2 - second way
-                // 0 - no action
+                // 0 - not min way
                 short[,] mainRoadWayTable = new short[vertexCount, vertexCount];
                 int tmp = destIdx;
                 if (mintiRez[tmp] != null)
@@ -296,16 +296,16 @@ namespace GraphsMinti
 
             }
             b.AppendFormat("overlap = false" + Environment.NewLine);
-            if (destIdx != -1)
-            {
+            if (!showAll) {
                 if (mintiRez[destIdx] != null)
                     b.Append("label = \"Відстань до стоку " + mintiRez[destIdx].distance + "\"");
+                else b.Append("label = \"Стік недосяжний\"");
             }
             else
             {
-                b.Append((startIdx == destIdx || destIdx == -1 ? "label = \"Показано всі шляхи\"" : "label = \"Стік недосяжний\"") + Environment.NewLine +
-                    "fontsize = 12;" + Environment.NewLine);
+                b.Append("label = \"Показано всі шляхи\"");
             }
+            b.Append(Environment.NewLine + "fontsize = 20;" + Environment.NewLine);
             return b.ToString();
         }
 

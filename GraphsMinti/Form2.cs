@@ -50,7 +50,7 @@ namespace GraphsMinti
                 dataGridViewPaths.Rows[i].HeaderCell.Value = (i + 1).ToString();
                 dataGridViewPaths.Rows[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             }
-            comboBoxDest.Items.Add("Всі");
+            comboBoxDest.Items.Add("Будь який");
             comboBoxSource.SelectedIndex = 0;
             comboBoxDest.SelectedIndex = comboBoxDest.Items.Count - 1;
 
