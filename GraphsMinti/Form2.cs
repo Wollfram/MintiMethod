@@ -121,7 +121,7 @@ namespace GraphsMinti
                 proc.StartInfo = procStartInfo;
                 proc.Start();
                 proc.WaitForExit();
-
+                File.Delete(Path.Combine(path, fileName));
             }
             catch (Exception e) {
                 MessageBox.Show("Неможливо згенерувати мережу");
