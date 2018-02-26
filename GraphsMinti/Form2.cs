@@ -50,7 +50,7 @@ namespace GraphsMinti
                 dataGridViewPaths.Rows[i].HeaderCell.Value = (i + 1).ToString();
                 dataGridViewPaths.Rows[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             }
-            comboBoxDest.Items.Add("All");
+            comboBoxDest.Items.Add("Всі");
             comboBoxSource.SelectedIndex = 0;
             comboBoxDest.SelectedIndex = comboBoxDest.Items.Count - 1;
 
@@ -76,12 +76,15 @@ namespace GraphsMinti
                 int endIdx = (comboBoxDest.SelectedIndex < comboBoxDest.Items.Count-1) ? comboBoxDest.SelectedIndex : -1;
                 mintiRez = graph.DoMinti(startIdx);
                 mintiRezStartIdx = startIdx;
-
-                string filename = "graph.txt";
+                string filename = "graph.gr";
                 string filepath = Directory.GetCurrentDirectory();
-                System.IO.File.WriteAllText(Path.Combine(filepath, filename), graph.ToMintyDotGraph(startIdx, endIdx, mintiRez, checkBoxShowSingles.Checked));
+
+                //generate graph script
+                System.IO.File.WriteAllText(Path.Combine(filepath, filename), graph.ToMintyDotGraph(startIdx, endIdx, mintiRez, checkBoxShowSingles.Checked,checkBoxShowAllMinPaths.Checked));
+                //create graph file
                 GenerateGraph(filename, filepath);
-                System.Diagnostics.Process.Start(Path.Combine(filepath, filename.Replace(".txt", ".jpeg")));
+                //show image
+                System.Diagnostics.Process.Start(Path.Combine(filepath, filename.Replace(".gr", ".jpeg")));
 
             }
             catch (Exception exception) {
@@ -112,16 +115,11 @@ namespace GraphsMinti
         private static void GenerateGraph(string fileName, string path)
         {
             try {
-                var command = string.Format("\"\"" + Path.Combine(path, "gviz\\bin\\dot") + "\" -Tjpeg \"{0}\" -o \"{1}\"\"", Path.Combine(path, fileName), Path.Combine(path, fileName.Replace(".txt", ".jpeg")));
-
+                var command = string.Format("\"\"" + Path.Combine(path, "gviz\\bin\\dot") + "\" -Tjpeg \"{0}\" -o \"{1}\"\"", Path.Combine(path, fileName), Path.Combine(path, fileName.Replace(".gr", ".jpeg")));
                 var procStartInfo = new System.Diagnostics.ProcessStartInfo("cmd", "/C " + command);
-
                 var proc = new System.Diagnostics.Process();
-
                 proc.StartInfo = procStartInfo;
-
                 proc.Start();
-
                 proc.WaitForExit();
 
             }
@@ -140,15 +138,17 @@ namespace GraphsMinti
             }
             try
             {
-            
                 int startIdx = mintiRezStartIdx;
                 int endIdx = (comboBoxDest.SelectedIndex < comboBoxDest.Items.Count - 1) ? comboBoxDest.SelectedIndex : -1;
-
-                string filename = "graph.txt";
+                string filename = "graph.gr";
                 string filepath = Directory.GetCurrentDirectory();
-                System.IO.File.WriteAllText(Path.Combine(filepath, filename), graph.ToMintyDotGraph(startIdx, endIdx, mintiRez, checkBoxShowSingles.Checked));
+                
+                //generate graph script
+                System.IO.File.WriteAllText(Path.Combine(filepath, filename), graph.ToMintyDotGraph(startIdx, endIdx, mintiRez, checkBoxShowSingles.Checked, checkBoxShowAllMinPaths.Checked));
+                //create graph file
                 GenerateGraph(filename, filepath);
-                System.Diagnostics.Process.Start(Path.Combine(filepath, filename.Replace(".txt", ".jpeg")));
+                //show image
+                System.Diagnostics.Process.Start(Path.Combine(filepath, filename.Replace(".gr", ".jpeg")));
 
             }
             catch (Exception exception)

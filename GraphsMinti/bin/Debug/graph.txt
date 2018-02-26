@@ -1,18 +1,10 @@
 digraph G {
 rankdir = LR;
 size = "10"
-node[shape = doublecircle color = blue]; "5";
-node[shape = doublecircle color = red]; "3";
+node[shape = doublecircle color = blue]; "1";
 node[shape = circle color = black];
-"1" -> "2" [label = "1" color = magenta fontcolor = magenta]
-"1" -> "4" [label = "1" color = magenta fontcolor = magenta]
-"1" -> "5" [label = "1"]
-"2" -> "3" [label = "1" color = magenta fontcolor = magenta]
-"3" -> "4" [label = "1"]
-"4" -> "3" [label = "1" color = magenta fontcolor = magenta]
-"4" -> "5" [label = "1"]
-"5" -> "1" [label = "1" color = magenta fontcolor = magenta]
-"5" -> "3" [label = "3" color = red fontcolor = red]
-"5" -> "4" [label = "2" color = magenta fontcolor = magenta]
+node[shape = circle color = black] "2";
 overlap = false
-label = "Відстань до стоку 3"}
+label = "Показано всі шляхи"
+fontsize = 12;
+}

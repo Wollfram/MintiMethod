@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GraphForm));
             this.dataGridViewPaths = new System.Windows.Forms.DataGridView();
             this.comboBoxSource = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.checkBoxShowSingles = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowAllMinPaths = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPaths)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -54,29 +56,29 @@
             this.dataGridViewPaths.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewPaths.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewPaths.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewPaths.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPaths.Location = new System.Drawing.Point(10, 27);
             this.dataGridViewPaths.Name = "dataGridViewPaths";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewPaths.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewPaths.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewPaths.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewPaths.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewPaths.Size = new System.Drawing.Size(694, 300);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewPaths.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewPaths.Size = new System.Drawing.Size(694, 297);
             this.dataGridViewPaths.TabIndex = 0;
             this.dataGridViewPaths.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPaths_CellValueChanged);
             // 
@@ -84,7 +86,7 @@
             // 
             this.comboBoxSource.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxSource.FormattingEnabled = true;
-            this.comboBoxSource.Location = new System.Drawing.Point(75, 335);
+            this.comboBoxSource.Location = new System.Drawing.Point(75, 332);
             this.comboBoxSource.Name = "comboBoxSource";
             this.comboBoxSource.Size = new System.Drawing.Size(97, 21);
             this.comboBoxSource.TabIndex = 4;
@@ -93,7 +95,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 338);
+            this.label2.Location = new System.Drawing.Point(12, 335);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 1;
@@ -103,9 +105,9 @@
             // 
             this.buttonCalculate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCalculate.Location = new System.Drawing.Point(193, 333);
+            this.buttonCalculate.Location = new System.Drawing.Point(384, 330);
             this.buttonCalculate.Name = "buttonCalculate";
-            this.buttonCalculate.Size = new System.Drawing.Size(513, 23);
+            this.buttonCalculate.Size = new System.Drawing.Size(322, 23);
             this.buttonCalculate.TabIndex = 2;
             this.buttonCalculate.Text = "Відшукати найкоротший шлях (алгоритм Мінті)";
             this.buttonCalculate.UseVisualStyleBackColor = true;
@@ -115,7 +117,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 370);
+            this.label4.Location = new System.Drawing.Point(12, 367);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 13);
             this.label4.TabIndex = 1;
@@ -125,7 +127,7 @@
             // 
             this.comboBoxDest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxDest.FormattingEnabled = true;
-            this.comboBoxDest.Location = new System.Drawing.Point(75, 365);
+            this.comboBoxDest.Location = new System.Drawing.Point(75, 362);
             this.comboBoxDest.Name = "comboBoxDest";
             this.comboBoxDest.Size = new System.Drawing.Size(97, 21);
             this.comboBoxDest.TabIndex = 4;
@@ -134,9 +136,9 @@
             // 
             this.buttonShowMap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonShowMap.Location = new System.Drawing.Point(376, 365);
+            this.buttonShowMap.Location = new System.Drawing.Point(384, 362);
             this.buttonShowMap.Name = "buttonShowMap";
-            this.buttonShowMap.Size = new System.Drawing.Size(330, 23);
+            this.buttonShowMap.Size = new System.Drawing.Size(322, 23);
             this.buttonShowMap.TabIndex = 5;
             this.buttonShowMap.Text = "Перебудувати мережу (без перерахування)";
             this.buttonShowMap.UseVisualStyleBackColor = true;
@@ -172,18 +174,32 @@
             this.checkBoxShowSingles.AutoSize = true;
             this.checkBoxShowSingles.Checked = true;
             this.checkBoxShowSingles.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxShowSingles.Location = new System.Drawing.Point(193, 369);
+            this.checkBoxShowSingles.Location = new System.Drawing.Point(193, 334);
             this.checkBoxShowSingles.Name = "checkBoxShowSingles";
             this.checkBoxShowSingles.Size = new System.Drawing.Size(177, 17);
             this.checkBoxShowSingles.TabIndex = 7;
             this.checkBoxShowSingles.Text = "Показати ізольовані вершини";
             this.checkBoxShowSingles.UseVisualStyleBackColor = true;
             // 
+            // checkBoxShowAllMinPaths
+            // 
+            this.checkBoxShowAllMinPaths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBoxShowAllMinPaths.AutoSize = true;
+            this.checkBoxShowAllMinPaths.Checked = true;
+            this.checkBoxShowAllMinPaths.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxShowAllMinPaths.Location = new System.Drawing.Point(193, 366);
+            this.checkBoxShowAllMinPaths.Name = "checkBoxShowAllMinPaths";
+            this.checkBoxShowAllMinPaths.Size = new System.Drawing.Size(185, 17);
+            this.checkBoxShowAllMinPaths.TabIndex = 7;
+            this.checkBoxShowAllMinPaths.Text = "Показати усі найкоротші шляхи";
+            this.checkBoxShowAllMinPaths.UseVisualStyleBackColor = true;
+            // 
             // GraphForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 397);
+            this.ClientSize = new System.Drawing.Size(716, 394);
+            this.Controls.Add(this.checkBoxShowAllMinPaths);
             this.Controls.Add(this.checkBoxShowSingles);
             this.Controls.Add(this.buttonShowMap);
             this.Controls.Add(this.comboBoxDest);
@@ -193,6 +209,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewPaths);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(436, 292);
             this.Name = "GraphForm";
@@ -220,5 +237,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.CheckBox checkBoxShowSingles;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.CheckBox checkBoxShowAllMinPaths;
     }
 }
